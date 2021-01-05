@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <div id="menu"><img src="images/menu.png" alt="menu" /></div>
+        <ul class="main-menu">
+          <li>Home</li>
+          <li>About</li>
+          <li>Contact</li>
+          <li>Shop</li>
+          <li>Map</li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <section class="site-text">
+        <h1>Main site header</h1>
+        <p>
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repellendus
+          atque perferendis unde rem ipsa rerum numquam natus! Nostrum, eius
+          suscipit!
+        </p>
+        <button>Learn more</button>
+      </section>
+      <section class="site-form">
+        <form action="obr.php">
+          <div class="login">
+            <label>
+              <span>Login</span>
+              <input
+                type="text"
+                id="login"
+                name="login"
+                placeholder="Your login"
+              />
+            </label>
+          </div>
+          <div class="password">
+            <label>
+              <span>Password</span>
+              <input
+                type="password"
+                id="password"
+                name="password"
+                placeholder="Your password"
+              />
+            </label>
+          </div>
+          <div class="salary">
+            <label>
+              <span>Choose your salary expectations</span>
+              <input id="salary" type="range" step="100" max="12000" min="0" />
+            </label>
+          </div>
+          <div class="agreement">
+            <label>
+              <span>Check if you agree to work for food</span>
+              <input type="checkbox" id="agreement" />
+              <div id="agreement_add"><div id="circle"></div></div>
+            </label>
+          </div>
+          <div class="send">
+            <button id="send">Ok</button>
+          </div>
+        </form>
+      </section>
+    </main>
+    <script>
+      const menu = document.getElementById("menu");
+      const mainMenu = document.getElementsByClassName("main-menu")[0];
+
+      menu.addEventListener("click", () => {
+        mainMenu.classList.add("open");
+      });
+
+      mainMenu.addEventListener("click", () => {
+        mainMenu.classList.remove("open");
+      });
+    </script>
+  </body>
+</html>

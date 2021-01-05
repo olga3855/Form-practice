@@ -1,0 +1,225 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  height: 100%;
+  background: url(./images/office.jpg) center / cover no-repeat;
+}
+
+.main-menu {
+  display: flex;
+  list-style-type: none;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+header > nav {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.main-menu > li {
+  font-size: 1.2rem;
+  padding: 20px 30px;
+  color: #fff;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.main-menu > li:hover {
+  background-color: #000;
+}
+
+main {
+  height: calc(100% - 66px);
+  display: flex;
+  align-items: stretch;
+  padding: 4% 0;
+  justify-content: center;
+}
+
+main > section {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+  flex-grow: 1;
+  flex-basis: 50%;
+  padding: 5%;
+
+  color: #fff;
+}
+
+.site-text {
+  text-align: right;
+  justify-content: flex-end;
+  background-image: linear-gradient(
+    to left,
+    rgba(0, 0, 0, 0.7) 0%,
+    rgba(0, 0, 0, 0.6) 45%,
+    transparent
+  );
+}
+
+.site-text > h1 {
+  font-size: 4rem;
+  font-family: "brush script MT", cursive;
+}
+
+.site-text > p {
+  font-size: 1.2rem;
+}
+
+.site-text > button,
+#send {
+  margin-top: 20px;
+  color: #fff;
+  font-size: 1.2rem;
+  padding: 10px 20px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background: none;
+}
+
+.site-text > button:hover {
+  background-color: #ccc;
+  color: #2d2d2d;
+}
+
+.site-form {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.site-form > form span {
+  display: block;
+  padding: 5px 0;
+  user-select: none;
+}
+
+.site-form > form > div {
+  padding: 10px;
+}
+
+input[type="text"],
+input[type="password"] {
+  width: 100%;
+  font-size: 1.2rem;
+  color: #fff;
+  background: none;
+  border: none;
+  border-bottom: 2px solid #ccc;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus {
+  outline: none;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+input[type="text"]::placeholder,
+input[type="password"]::placeholder {
+  font-weight: bold;
+  color: #ccc;
+}
+
+input[type="range"] {
+  -webkit-appearance: none;
+  height: 0px;
+  width: 100%;
+}
+
+input[type="range"]:focus {
+  outline: none;
+}
+
+input[type="range"]::-webkit-slider-runnable-track {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+}
+
+input[type="range"]::-webkit-slider-thumb,
+#circle {
+  -webkit-appearance: none;
+  border: 1px solid #ccc;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  cursor: pointer;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+#agreement {
+  display: none;
+}
+
+#agreement_add {
+  transition: all 0.4s ease;
+
+  width: 40px;
+  height: 20px;
+  border-radius: 20px;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+#agreement:checked + #agreement_add {
+  background: rgba(0, 255, 0, 0.2);
+}
+
+#circle {
+  transition: all 0.4s ease;
+  transform: translateX(0);
+}
+
+#agreement:checked + #agreement_add > #circle {
+  transform: translateX(20px);
+}
+
+#send:hover {
+  background-color: rgba(0, 255, 0, 0.4);
+}
+
+#menu {
+  display: none;
+}
+
+@media (max-width: 580px) {
+  #menu {
+    display: block;
+    padding: 10px;
+    width: 32px;
+    margin: 0 auto;
+    cursor: pointer;
+  }
+
+  .main-menu {
+    background: black;
+    transition: opacity 1s ease;
+    position: fixed;
+    z-index: 999;
+    left: -100vw;
+    right: unset;
+    top: 0;
+    bottom: 0;
+    flex-direction: column;
+    text-align: center;
+    opacity: 0;
+  }
+
+  .main-menu.open {
+    left: 0;
+    right: 0;
+    opacity: 1;
+  }
+
+  #menu > img {
+    width: 32px;
+  }
+}
